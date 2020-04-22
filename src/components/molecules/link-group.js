@@ -31,7 +31,7 @@ MenuGroup.defaultProps = {
     {to: '/', label: 'Home'},
     {to: '/about', label: 'About'},
     {to: '/contact', label: 'Contact'},
-    {to: '/list-of-works', label: 'list of works'},
+    {to: '/list-of-work', label: 'list of works'},
   ]
 }
 

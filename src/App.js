@@ -6,6 +6,8 @@ import MenuBody from './components/organisms/menu/menu-body';
 import Menu from './components/organisms/menu';
 import MenuGroup from './components/molecules/link-group';
 import MenuHeader from './components/organisms/menu/menu-header';
+import Title from './components/atoms/title';
+
 
 const App = () => {
   const [ MenuOpen, setOpenMenu ] = useState(false);
@@ -20,16 +22,16 @@ const App = () => {
         </MenuBody>
       </Menu>
       <Route exact path="/">
-        <div>home</div>
+        <Title size='large'>home</Title>
       </Route>
       <Route path="/about">
-        <div>About</div>
+        <Title size='large'>About</Title>
       </Route>
       <Route path="/Contact">
-        <div>Contact</div>
+        <Title size='large'>Contact</Title>
       </Route>
       <Route path="/list-of-work">
-        <div>List of work</div>
+        <Title size='large'>List of work</Title>
       </Route>
     </>
   );
