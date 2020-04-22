@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(Link)`
   padding: 2rem 2rem;
   border: 1px solid black;
   width: 100%;
@@ -15,13 +15,20 @@ const StyledLink = styled(NavLink)`
   }
 `
 
-const MenuLink = ({to, label}) => (
-  <StyledLink exact to={to} activeClassName="active">{label}</StyledLink>
+const NavLink = ({to, label}) => (
+  <StyledLink
+    data-testid="link"
+    exact
+    to={to}
+    activeClassName="active"
+  >
+      {label}
+  </StyledLink>
 );
 
-MenuLink.propTypes = {
+NavLink.propTypes = {
   to: PropTypes.string.isRequired,
   label:PropTypes.string.isRequired
 };
 
-export default MenuLink;
+export default NavLink;
