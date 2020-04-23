@@ -22,16 +22,16 @@ const App = () => {
         </MenuBody>
       </Menu>
       <Route exact path="/">
-        <Title size='large'>home</Title>
+        <Title size='large' data-testId="large-title">home</Title>
       </Route>
       <Route path="/about">
-        <Title size='large'>About</Title>
+        <Title size='medium' data-testId="medium-title">About</Title>
       </Route>
       <Route path="/Contact">
-        <Title size='large'>Contact</Title>
+        <Title size='large' data-testId="small-title">Contact</Title>
       </Route>
       <Route path="/list-of-work">
-        <Title size='large'>List of work</Title>
+        <Title size='large' data-testId="large-title">List of work</Title>
       </Route>
     </>
   );
