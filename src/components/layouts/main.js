@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Main = styled.div`
@@ -8,4 +9,8 @@ const Main = styled.div`
     height: 100vh;
 `;
 
-export default Main;
+const MainContainer = ({ children }) => (
+    <Main data-testid="test-main">{children}</Main>
+)
+
+export default MainContainer;

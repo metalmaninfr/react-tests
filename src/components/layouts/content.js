@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Content = styled.div`
@@ -12,4 +13,8 @@ const Content = styled.div`
     padding: 16px;
 `;
 
-export default Content;
+const ContentContainer = ({ children }) => (
+    <Content data-testid="test-content">{children}</Content>
+)
+
+export default ContentContainer;
