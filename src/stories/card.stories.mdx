@@ -1,0 +1,23 @@
+import { Meta, Story, Preview, Code, Props } from '@storybook/addon-docs/blocks';
+import { Default } from './card.stories';
+import Card from '../components/atoms/card';
+
+<Meta title="Atoms|Card" component={Card} />
+
+# Card
+
+This section describe the Card component.
+
+<div style={{ display: 'flex', justifyContent: 'space-between', width: '600px' }}>
+    <Default />
+</div>
+
+Now let's see in details !
+
+```javascript
+<Card title="a title">Card</Card>
+```
+
+# Props
+
+<Props of={Card} />
