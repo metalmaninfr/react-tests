@@ -12,9 +12,9 @@ const StyledMenuGroup = styled.div`
 `
 
 const MenuGroup = ({Links}) => (
-  <StyledMenuGroup>
+  <StyledMenuGroup data-testid="link-group-container">
     {Links.map(({ to, label }) => (
-      <MenuLink to={to} label={label} />
+      <MenuLink key={label} to={to} label={label} />
     ))}
   </StyledMenuGroup>
 );
