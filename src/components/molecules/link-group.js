@@ -29,9 +29,8 @@ MenuGroup.propTypes = {
 MenuGroup.defaultProps = {
   Links: [
     {to: '/', label: 'Home'},
-    {to: '/about', label: 'About'},
-    {to: '/contact', label: 'Contact'},
-    {to: '/list-of-work', label: 'list of works'},
+    {to: '/list-of-work', label: 'List of works'},
+    {to: '/contact', label: 'Contact'}
   ]
 }
 
