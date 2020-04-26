@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Content = styled.div`
-    width: 500px;
-    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +9,7 @@ const Content = styled.div`
     border-radius: 4px;
     background: #fff;
     padding: 16px;
+    width: 100%;
 `;
 
 const ContentContainer = ({ children }) => (

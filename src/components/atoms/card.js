@@ -12,6 +12,9 @@ const StyledCard = styled.div`
   width: 100%;
   min-height: 10rem;
   padding: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  margin: 1rem 0;
 `
 
 
@@ -24,8 +27,15 @@ const Card = ({ title, testid, children }) => (
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
-  testid: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+  ]).isRequired,
+  testid: PropTypes.string,
 };
+
+Card.defaultProps = {
+  testid: 'card-container',
+}
 
 export default Card;

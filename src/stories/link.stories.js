@@ -6,7 +6,7 @@ import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
 
 export const Link = props => (
-  <div style={{ padding: '2rem 0' }}>
+  <div style={{ padding: '2rem 0', background: '#6200EE' }}>
   <Router history={history}>
     <NavLink to="/" label="This is a link" testid="link" onClick={props.onClick} />
   </Router>

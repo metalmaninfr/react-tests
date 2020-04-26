@@ -6,9 +6,9 @@ import styled from 'styled-components';
 const StyledMenuGroup = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: center;
   position: relative;
+  height: 100%;
 `
 
 const MenuGroup = ({Links}) => (
