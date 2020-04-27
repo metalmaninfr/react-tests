@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { Meta, Story, Preview, Code, Props } from '@storybook/addon-docs/blocks';
 import WorkCard from '../components/layouts/work-card';
 
@@ -15,7 +14,7 @@ This section describe the WorkCard component.
 Now let's see in details !
 
 ```javascript
-<WorkCard src={image} alt={imageAlt} title={title} date={moment(date).formated('DD-MM-YYYY')} description={description} coverimg={coverimg} />
+<WorkCard src={image} alt={imageAlt} title={title} date={date} description={description} coverimg={coverimg} />
 ```
 # Props
 
