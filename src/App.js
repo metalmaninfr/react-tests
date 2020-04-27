@@ -10,8 +10,9 @@ import MenuHeader from './components/organisms/menu/header';
 import MenuBackground from './components/organisms/menu/background';
 import Card from './components/atoms/card';
 import Content from './components/layouts/content';
+import WorkCard from './components/layouts/work-card';
 
-const App = ({ location }) => {
+const App = ({ location, works }) => {
   return (
     <>
       <MenuHeader>
@@ -25,7 +26,7 @@ const App = ({ location }) => {
       </Menu>
       <Route exact path="/">
         <Content>
-          <Grid>
+          <Grid fluid>
             <Row center="xs">
               <Col xs={10} md={8}>
                 <Card title="Atef Kahlaoui">
@@ -67,13 +68,52 @@ const App = ({ location }) => {
         </Content>
       </Route>
       <Route path="/list-of-work">
-        <Title size='large' data-testId="large-title"><span>List of work</span></Title>
+        <Grid fluid>
+          <Row between="xs">
+            {works.map(({
+              src,
+              alt,
+              coverImg,
+              coverAlt,
+              title,
+              date,
+              description,
+            }) => (
+              <Col xs={12} md={3}>
+                <WorkCard
+                  src={src}
+                  alt={alt}
+                  coverImg={coverImg}
+                  coverAlt={coverAlt}
+                  title={title}
+                  date={date}
+                  description={description}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Grid>
       </Route>
       <Route path="/Contact">
         <Title size='large' data-testId="small-title"><span>Contact</span></Title>
       </Route>
     </>
   );
+}
+
+
+App.defaultProps = {
+  works: [
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+  ],
 }
 
 export default withRouter(App);
