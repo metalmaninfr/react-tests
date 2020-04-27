@@ -1,7 +1,7 @@
+
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-
 // App components
 import Title from './components/atoms/title';
 import Menu from './components/organisms/menu';
@@ -11,10 +11,12 @@ import MenuBackground from './components/organisms/menu/background';
 import Card from './components/atoms/card';
 import Content from './components/layouts/content';
 import WorkCard from './components/layouts/work-card';
+import KonamiCode from './components/konami/konami';
 
 const App = ({ location, works }) => {
   return (
     <>
+      <KonamiCode />
       <MenuHeader>
         <Title size='large' data-testid="large-title">
           <span>{location.pathname !== "/" ? location.pathname.split('/')[1].split('-').join(' ') : 'Home'}</span>
