@@ -12,7 +12,7 @@ const Background = styled.div`
 `
 
 const BackgroundImg = ({ src, alt }) => (
-  <Background>
+  <Background data-testid="test-background">
     <img src={src} alt={alt} height="65%" width="45%" />
   </Background>
 );
