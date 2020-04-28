@@ -5,12 +5,15 @@ import PropTypes from 'prop-types';
 const Background = styled.div`
   height: 20rem;
   width: 100%;
-  background: lightgrey;
+  background: rgba(238, 167, 0, .7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const BackgroundImg = ({ src, alt }) => (
   <Background>
-    <img src={src} alt={alt} height="100%" width="100%" />
+    <img src={src} alt={alt} height="65%" width="45%" />
   </Background>
 );
 

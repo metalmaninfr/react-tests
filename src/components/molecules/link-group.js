@@ -9,6 +9,7 @@ const StyledMenuGroup = styled.div`
   justify-content: center;
   position: relative;
   height: 100%;
+  font-family: Verdana, Geneva, sans-serif;
 `
 
 const MenuGroup = ({Links}) => (
@@ -28,7 +29,7 @@ MenuGroup.propTypes = {
 
 MenuGroup.defaultProps = {
   Links: [
-    {to: '/', label: 'Home'},
+    {to: '/', label: 'Who am I'},
     {to: '/list-of-work', label: 'List of works'},
     {to: '/contact', label: 'Contact'}
   ]

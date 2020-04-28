@@ -22,7 +22,7 @@ const App = ({ location, works }) => {
           <span>{location.pathname !== "/" ? location.pathname.split('/')[1].split('-').join(' ') : 'Home'}</span>
         </Title>
       </MenuHeader>
-      <MenuBackground />
+      <MenuBackground src="https://cdn.shopify.com/s/files/1/0042/4207/9814/files/Logo_New_600x.png?v=1537871861" />
       <Menu>
         <MenuGroup />
       </Menu>
@@ -80,6 +80,7 @@ const App = ({ location, works }) => {
               title,
               date,
               description,
+              link
             }) => (
               <Col xs={12} md={3}>
                 <WorkCard
@@ -90,6 +91,7 @@ const App = ({ location, works }) => {
                   title={title}
                   date={date}
                   description={description}
+                  link={link}
                 />
               </Col>
             ))}
@@ -106,15 +108,87 @@ const App = ({ location, works }) => {
 
 App.defaultProps = {
   works: [
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
-    {src: null, alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/bd0763117f29f351569757e8c1c33ee6.1000x1000x1.jpg", 
+      coverAlt: "Album Monument", 
+      title: 'Monument', 
+      date: "2019-11-08", 
+      description: 'Respecté par les tauliers historiques et adulé par les stars de la nouvelle école, Alkpote, personnage vulgaire et outrageux doublé d’un rappeur aux qualités techniques phénoménales, est aujourd’hui considéré comme une véritable légende vivante du rap français.Après Amour en featuring avec Katerine et Nautilus en featuring avec Kaaris, Alkpote revient avec son tout nouvel album : MONUMENT.', 
+      link: "https://www.fnac.com/a13864179/Alkpote-Monument-CD-album"
+    },
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/b9771c6b245ed2581e6968ac3b92ddf8.600x600x1.jpg", 
+      coverAlt: "Album Inferno", 
+      title: 'Inferno', 
+      date: "2018-04-27",
+      description: "Après le succès de l’album Sadisme et Perversion en 2016, sur lequel Alkpote délivrait enfin à son public un projet entièrement solo, sans le moindre featuring, puis de la série de clips Les Marches de L’Empereur Saison 2 en 2017, Alkpote entame l’année 2018 sur la même cadence de stakhanoviste : d’une part, la troisième saison des Marches de l’Empereur explose les compteurs, avec déjà 3 millions de vues pour le premier épisode ; et d’autre part, un nouvel album solo vient asseoir définitivement son statut de rappeur le plus influent de sa génération.",
+      link: "https://www.fnac.com/a11855117/Alkpote-Inferno-CD-album"
+    },
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/5dcf18c43d61691fc8e1ed7bd7c17e6c.1000x1000x1.jpg", 
+      coverAlt: "Album Les marches de l'empereur", 
+      title: 'Les marches de l\'empereur', 
+      date: "2017-07-07", 
+      description: 'ALKPOTE est un véritable personnage à part entière du rap français. Maître des rimes multi syllabiques, roi des néologismes, expert en vulgarités et placements inattendus, il s’est toujours facilement distingué des autres rappeurs. Présent depuis plus d’une dizaine d’années, il a franchi un cap l’année dernière en sortant son album « Sadisme et perversion », entièrement produit par DJ Weedim (notamment DJ de Vald). Proche de Seth Gueko et Vald, dont Vald a toujours évoqué l’influence, Alkpote a rappé avec (presque) tout le rap français et est régulièrement cité comme l’un des MCs les plus techniques. Une étude sérieuse de Shakedatass à la fin de l’année 2014 plaçait d’ailleurs Alkpote à côté d’un certain MC Solaar au top du classement des rappeurs utilisant le plus de vocabulaire. Le concept des Marches de l’Empereur, clip filmé avec à chaque fois un ou plusieurs guests, l’a propulsé sur le devant de la scène. Un album qui comblera les fans qui ont suivi la montée des Marches de l’Empereur sur Youtube et cela en attendant la sortie d’un nouvel album à la fin de l’année',
+      link: "https://www.fnac.com/a10685211/Alkpote-Les-Marches-de-L-Empereur-CD-album"
+    },
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/4541dcb3da1ce05cd2e9322f906ddea0.1000x1000x1.jpg", 
+      coverAlt: "Album Sadisme et perversion", 
+      title: 'Sadisme et perversion', 
+      date: "2016-06-24", 
+      description: 'ALKPOTE est certainement l’une des figures les plus révérées du rap français. Son style et ses textes sont toujours sans retenue, débordants d’insanités mises en forme avec génie. Père d’un style ayant influencé des artistes comme Vald qui n’hésite pas à le citer en référence, ce n’est pas pour rien qu’ALKPOTE a été rebaptisé « L’empereur » par ses fans. ALKPOTE revient avec un nouvel album grossier et brillant à la fois. L’album a été entièrement réalisé et produit par DJ WEEDIM qui n’est autre que le DJ de Vald et de Seth Gueko. Le style de DJ WEEDIM reflète ce qui se fait de plus actuel en manière de rap. Le résultat déborde d’énergie et de démesure. DJ WEEDIM est également le DJ de OKLM Radio, la radio sur smartphone lancée par Booba déjà suivie par plus de 1 million de personne à date. Le programme musical de cette connexion ALKPOTE & DJ WEEDIMest annoncé sans détour dans le titre : Sadisme et perversion.',
+      link: "https://www.fnac.com/a9715739/Alkpote-Dj-Weedim-Sadisme-et-Perversion-CD-album"
+    },
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/49d4b28f8c6e29e2a4ad5fa81f7d06a2.843x843x1.jpg", 
+      coverAlt: "Album Ténébreuse musique", 
+      title: 'Ténébreuse musique', 
+      date: "2016-01-20", 
+      description: "L’aigle de Carthage, l’Empereur de la crasserie, Jonathan H, Serge Gainzbeur… derrière tous ces A.k.a vous aurez reconnu Alkpote. Qui depuis 2005 nous délivre un rap bien particulier : sale, grotesque, vulgaire à souhait, bourré de références télévisuelles et quotidiennes, le tout servi avec un flow unique reconnaissable entre mille. Idolâtré par beaucoup d'auditeurs, incompris par tant d'autres, le rap d'alkpote est déroutant, violent et outrancier",
+      link: "https://www.kisskissbankbank.com/fr/projects/tenebreuse-musique--2"
+    },
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/8ea25d5cd73661a1d8be7996d145c075.1000x1000x1.jpg", 
+      coverAlt: "Album Orgasmixtape 2", 
+      title: 'L\'Orgasmixtape, Vol. 2', 
+      date: "2015-05-11", 
+      description: 'La toute nouvelle mixtape d\'ALKPOTE ! 17 Titres inédits featuring Seth Gueko - Sadek - Vald - Nubi - Joe Lucazz - Infinit - Eloquence - Rcp. Sur des productions de Butter Bullets, Dj Weedim.',
+      link: "https://www.fnac.com/a8242380/Alkpote-Orgasmixtape-2-CD-album"
+    },
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/dde0b81fcc75c774d4906d1c1f1fd3f5.1000x1000x1.jpg", 
+      coverAlt: "Album Orgasmixtape", 
+      title: 'L\'Orgasmixtape', 
+      date: "2014-04-07", 
+      description: 'AlKpote, artiste le plus proléfique de sa génération, réveille tous vos sens le 07 Avril avec un nouveau projet "l\'OrgasMixtape" de 17 titres aux côtés de Niro, 1995 (Nekfeu, Alpha Wann...), Zekwé, 25G, Aketo (Sniper)... Rappeur français unique en son genre de par son style baroque, "l\'Empereur de la crasserie" reste fidèle à lui-même, partageant ses textes crus, odieux et sans équivoque offrant ainsi aux auditeurs les moins timides un bond dans un univers sombre et scabreux. AlKpote, maître de la "vulgarité artistique", déborde d\'ingéniosité : malgré les apparences d\'une dépravation insensée, un réel message est a décoder derrière chaque ligne violente et choquante. Ecoutez, vous atteindrez "l\'Orgasm...ixtape" !',
+      link: "https://www.fnac.com/a7055481/Alkpote-Orgasmixtape-CD-album"
+    },
+    {
+      src: "https://image.flaticon.com/icons/svg/2823/2823048.svg", 
+      alt: "icone", 
+      coverImg: "https://images.genius.com/b61a437bcf35711d8f333620147febd4.600x600x1.jpg", 
+      coverAlt: "Album Neochrome hall stars game", 
+      title: 'Neochrome hall stars game', 
+      date: "2012-11-26", 
+      description: "Neochrome Hall Stars, c'est la réunion de Seth Gueko, Alkpote et Zekwe Ramos, tout trois issu du label Neochrome. A l'automne 2012, vous pourrez retrouver l'album baptisé du meme nom Neochrome Hall Stars \"Game\".",
+      link: "https://www.fnac.com/a4920852/Seth-Gueko-Neochrome-hall-stars-game-CD-album"
+    },
+    // {src: null , alt: null, coverImg: null, coverAlt: null, title: 'Groupe 420', date: "2020-04-20", description: 'Alex, Yasin, Mael, Clément'},
   ],
 }
 

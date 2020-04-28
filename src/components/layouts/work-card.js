@@ -10,7 +10,8 @@ import ImgCircle from '../atoms/img-circle';
 import Title from '../atoms/title';
 import Label from '../atoms/label';
 
-const StyledCard = styled.div`
+const StyledCard = styled.a`
+  display: block;
   background: white;
   box-shadow: 1px 3px 37px -10px ${rgba('black', 0.75)};
   width: 100%;
@@ -21,17 +22,24 @@ const StyledCard = styled.div`
   box-sizing: border-box;
   border-radius: .2rem;
   padding: 2rem 0;
+  text-decoration: none;
+  color: unset;
 `
 
 const CoverImage = styled.div`
   background: lightgrey;
   width: 100%;
-  height: 10rem;
+  height: 16rem;
 `
 
 const StyledRow = styled(Row)`
   padding: .5rem 0 1.5rem;
 `
+
+const TextContent = styled.p`
+  height: 12rem;
+  overflow: scroll;
+`;
 
 const WorkCard = ({
   src,
@@ -41,20 +49,21 @@ const WorkCard = ({
   title,
   date,
   description,
+  link
 }) => (
-  <StyledCard>
+  <StyledCard href={link} target="_blank">
     <Grid>
       <StyledRow start="xs" middle="xs">
-        <Col xs={3}>
+        <Col xs={2}>
           <ImgCircle src={src} alt={alt} />
         </Col>
-        <Col xs={6}>
+        <Col xs={10}>
           <Row>
             <Col xs={10}>
               <Title size="small"><span>{title}</span></Title>
             </Col>
             <Col xs={10}>
-              <Label size="small"><span>{moment(date).format('DD-MM-YYY')}</span></Label>
+              <Label size="small"><span>{moment(date).format('DD-MM-YYYY')}</span></Label>
             </Col>
           </Row>
         </Col>
@@ -65,7 +74,7 @@ const WorkCard = ({
     </CoverImage>
     <Grid>
       <Col xs={12}>
-        <p>{description}</p>
+        <TextContent>{description}</TextContent>
       </Col>
     </Grid>
   </StyledCard>
@@ -79,6 +88,7 @@ WorkCard.propTypes = {
   title: PropTypes.string,
   date: PropTypes.string,
   description: PropTypes.string,
+  link: PropTypes.string
 }
 
 WorkCard.defaultProps ={
@@ -89,5 +99,6 @@ WorkCard.defaultProps ={
   date: null,
   description: null,
   coverAlt: "cover",
+  link: "#"
 }
 export default WorkCard;
