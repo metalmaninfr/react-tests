@@ -145,8 +145,7 @@ const App = ({ location, works }) => {
                 </Card>
 
                 <Title><span>{contactContent.mapTitle}</span></Title>
-
-                <MapBox style={{ backgroundImage: `url(${contactContent.mapSrc})`}} />
+                <MapBox url={contactContent.mapSrc}/>
               </Col>
             </Row>
           </Grid>

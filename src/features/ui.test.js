@@ -7,6 +7,7 @@ import 'jest-styled-components';
 import Main from '../components/layouts/main';
 import Content from '../components/layouts/content';
 import Background from "../components/organisms/menu/background";
+import MapBox from "../components/atoms/map";
 
 describe('testing UI components', () => {
   test('Main container', () => {
@@ -30,4 +31,12 @@ describe('testing UI components', () => {
     const div = getByTestId('test-background')
     expect(div).toHaveStyleRule('display', 'flex');
   });
+
+  test('Map component', () => {
+    const { container, getByTestId } = render(<MapBox />);
+    expect(container).toBeTruthy();
+    const div = getByTestId('mapbox')
+    expect(div).toHaveStyleRule('background-size', 'cover');
+    expect(div).toHaveStyleRule('background-position', 'center');
+  })
 });
