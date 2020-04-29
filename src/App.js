@@ -13,6 +13,7 @@ import Card from './components/atoms/card';
 import Content from './components/layouts/content';
 import WorkCard from './components/layouts/work-card';
 import KonamiCode from './components/konami/konami';
+import ImgCircle from './components/atoms/img-circle';
 
 
 const App = ({ location, works }) => {
@@ -104,8 +105,39 @@ const App = ({ location, works }) => {
           </Grid>
         </Route>
         <Route path="/Contact">
-          <Title size='large' data-testId="small-title"><span>Contact</span></Title>
-        </Route>
+        <Content>
+          <Grid>
+            <Row center="xs">
+              <Col xs={10} md={8}>
+                <Card title="Suivez Alkpote sur les réseaux sociaux: ">
+                  <br /><br />
+                  <div style={{display: "flex", justifyContent: "center"}}>
+                    <a href="https://twitter.com/AlkpoteLeVrai" target="_blank" rel="noopener noreferrer">
+                      <ImgCircle
+                        src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/1200px-Twitter_Bird.svg.png"
+                        alt="twitter"
+                      />
+                    </a>
+                    <a style={{margin: "0 30px"}} href="https://www.instagram.com/alkpote/" target="_blank" rel="noopener noreferrer">
+                      <ImgCircle
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png"
+                        alt="instagram"
+                      />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC5eyo1DYNuDKkIExfXKeGIg" target="_blank" rel="noopener noreferrer">
+                      <ImgCircle
+                        src="https://festival-roc-castel.eu/wp-content/uploads/sites/21/2019/04/logo-youtube-png-rond-2.png"
+                        alt="youtube"
+                      />
+                    </a>
+                  </div>
+                  <br /><br />
+                </Card>
+              </Col>
+            </Row>
+          </Grid>
+        </Content>
+      </Route>
       </>
     );
   } else {
