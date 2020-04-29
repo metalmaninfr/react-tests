@@ -14,27 +14,36 @@ import Content from './components/layouts/content';
 import WorkCard from './components/layouts/work-card';
 import KonamiCode from './components/konami/konami';
 import ImgCircle from './components/atoms/img-circle';
-import Background from './assets/background.png';
+import MapBox from './components/atoms/map';
 
 
 const App = ({ location, works }) => {
   const [homeContent, setHomeContent] = useState([]);
   const [worksContent, setWorksContent] = useState([]);
-  const [load, setLoad] = useState(false);
+  const [contactContent, setContactContent] = useState([]);
+  const [loadHome, setLoadHome] = useState(false);
+  const [loadWorks, setLoadWorks] = useState(false);
+  const [loadContact, setLoadContact] = useState(false);
 
   useEffect(() => {
     axios.get('https://alkportfolio-c8d26.firebaseio.com/home.json')
       .then(res => {
         setHomeContent(res.data);
-        setLoad(true);
-      })
+        setLoadHome(true);
+    })
     axios.get('https://alkportfolio-c8d26.firebaseio.com/works.json')
       .then(res => {
         setWorksContent(res.data);
-      })
+        setLoadWorks(true);
+    })
+    axios.get('https://alkportfolio-c8d26.firebaseio.com/contact.json')
+      .then(res => {
+        setContactContent(res.data);
+        setLoadContact(true);
+    })
   }, []);
 
-  if(load) {
+  if(loadHome && loadWorks && loadContact) {
     return (
       <>
         <KonamiCode />
@@ -43,7 +52,7 @@ const App = ({ location, works }) => {
             <span>{location.pathname !== "/" ? location.pathname.split('/')[1].split('-').join(' ') : 'Home'}</span>
           </Title>
         </MenuHeader>
-        <MenuBackground src={Background} />
+        <MenuBackground src={homeContent.background} />
         <Menu>
           <MenuGroup />
         </Menu>
@@ -110,30 +119,34 @@ const App = ({ location, works }) => {
           <Grid>
             <Row center="xs">
               <Col xs={10} md={8}>
-                <Card title="Suivez Alkpote sur les réseaux sociaux: ">
+                <Card title={contactContent.title}>
                   <br /><br />
                   <div style={{display: "flex", justifyContent: "center"}}>
-                    <a href="https://twitter.com/AlkpoteLeVrai" target="_blank" rel="noopener noreferrer">
+                    <a href={contactContent.twitter.link} target="_blank" rel="noopener noreferrer">
                       <ImgCircle
-                        src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/1200px-Twitter_Bird.svg.png"
-                        alt="twitter"
+                        src={contactContent.twitter.img.src}
+                        alt={contactContent.twitter.img.alt}
                       />
                     </a>
-                    <a style={{margin: "0 30px"}} href="https://www.instagram.com/alkpote/" target="_blank" rel="noopener noreferrer">
+                    <a style={{margin: "0 30px"}} href={contactContent.instagram.link} target="_blank" rel="noopener noreferrer">
                       <ImgCircle
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png"
-                        alt="instagram"
+                        src={contactContent.instagram.img.src}
+                        alt={contactContent.twitter.img.alt}
                       />
                     </a>
-                    <a href="https://www.youtube.com/channel/UC5eyo1DYNuDKkIExfXKeGIg" target="_blank" rel="noopener noreferrer">
+                    <a href={contactContent.youtube.link} target="_blank" rel="noopener noreferrer">
                       <ImgCircle
-                        src="https://festival-roc-castel.eu/wp-content/uploads/sites/21/2019/04/logo-youtube-png-rond-2.png"
-                        alt="youtube"
+                        src={contactContent.youtube.img.src}
+                        alt={contactContent.youtube.img.alt}
                       />
                     </a>
                   </div>
                   <br /><br />
                 </Card>
+
+                <Title><span>{contactContent.mapTitle}</span></Title>
+
+                <MapBox style={{ backgroundImage: `url(${contactContent.mapSrc})`}} />
               </Col>
             </Row>
           </Grid>
@@ -150,7 +163,7 @@ const App = ({ location, works }) => {
             <span>{location.pathname !== "/" ? location.pathname.split('/')[1].split('-').join(' ') : 'Home'}</span>
           </Title>
         </MenuHeader>
-        <MenuBackground src={Background} />
+        <MenuBackground src="https://firebasestorage.googleapis.com/v0/b/alkportfolio-c8d26.appspot.com/o/background.png?alt=media&token=f01112c2-580a-4f68-8f7f-0fa31606f943" />
         <Menu>
           <MenuGroup />
         </Menu>
