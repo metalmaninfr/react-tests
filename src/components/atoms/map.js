@@ -9,6 +9,7 @@ const Map = styled.div`
   background-size: cover;
   background-position: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 `
 
 const MapBox = ({ url }) => (
