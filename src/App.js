@@ -14,6 +14,7 @@ import Content from './components/layouts/content';
 import WorkCard from './components/layouts/work-card';
 import KonamiCode from './components/konami/konami';
 import ImgCircle from './components/atoms/img-circle';
+import Background from './assets/background.png';
 
 
 const App = ({ location, works }) => {
@@ -42,7 +43,7 @@ const App = ({ location, works }) => {
             <span>{location.pathname !== "/" ? location.pathname.split('/')[1].split('-').join(' ') : 'Home'}</span>
           </Title>
         </MenuHeader>
-        <MenuBackground src="https://cdn.shopify.com/s/files/1/0042/4207/9814/files/Logo_New_600x.png?v=1537871861" />
+        <MenuBackground src={Background} />
         <Menu>
           <MenuGroup />
         </Menu>
@@ -149,7 +150,7 @@ const App = ({ location, works }) => {
             <span>{location.pathname !== "/" ? location.pathname.split('/')[1].split('-').join(' ') : 'Home'}</span>
           </Title>
         </MenuHeader>
-        <MenuBackground src="https://cdn.shopify.com/s/files/1/0042/4207/9814/files/Logo_New_600x.png?v=1537871861" />
+        <MenuBackground src={Background} />
         <Menu>
           <MenuGroup />
         </Menu>
